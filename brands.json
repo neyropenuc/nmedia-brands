@@ -45,6 +45,21 @@
     ]
   },
   {
+    "id": "yandex",
+    "title": "ЯНДЕКС",
+    "description": "Рекламный ролик в формате документального интервью: история серфера от детской мечты до финала чемпионата. Волны, тренировки, победа и признание — всё снято без съёмок и выездов, целиком с помощью нейросетей. Герой узнаваем в каждом кадре — от детских воспоминаний до пьедестала.",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/yandex/cover.jpg",
+    "preview_vid": "https://neyropenuc.github.io/nmedia-brands/yandex/bg.mp4",
+    "images": [
+      "https://neyropenuc.github.io/nmedia-brands/yandex/photo1.jpg",
+      "https://neyropenuc.github.io/nmedia-brands/yandex/photo2.jpg",
+      "https://neyropenuc.github.io/nmedia-brands/yandex/photo3.jpg"
+    ],
+    "videos": [
+      "https://neyropenuc.github.io/nmedia-brands/yandex/video.mp4"
+    ]
+  },
+  {
     "id": "h2agency",
     "title": "H2 AGENCY",
     "description": "Рекламный ролик для кадрового агентства, где важно было показать весь путь подбора и подготовки рабочих для строительных объектов. Визуально собрали полный процесс: от отбора кандидатов и обучения до оформления документов, логистики и выхода людей на объект. Почти весь ролик был создан с помощью ИИ, без съёмок и сложной постановки. От клиента потребовались только логотип и описание процессов.",
