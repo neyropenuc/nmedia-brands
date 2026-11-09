@@ -1,0 +1,24 @@
+<!-- NM-MEDIA-GITHUB: кейсы и шоурил грузятся с GitHub вместо Beget. Код блоков не менялся — здесь только подмена старых адресов на новые и ускорение загрузки. -->
+<link rel="preconnect" href="https://neyropenuc.github.io" crossorigin>
+<script id="nm-media-map">
+(function(){
+  var MAP={
+    'https://s3.ru1.storage.beget.cloud/ace65a9fae78-nmediafiles/brands.json':'https://neyropenuc.github.io/nmedia-brands/brands.json',
+    'https://s3.ru1.storage.beget.cloud/ace65a9fae78-nmediafiles/reels.json':'https://neyropenuc.github.io/nmedia-reels/reels.json',
+    'https://s3.ru1.storage.beget.cloud/ace65a9fae78-nmediafiles/motion.json':'https://neyropenuc.github.io/nmedia-motion/motion.json',
+    'https://blerejethafrutru.begetcdn.cloud/%D1%88%D0%BE%D1%83%D1%80%D0%B8%D0%BB.mp4':'https://neyropenuc.github.io/nmedia-brands/site/showreel.mp4'
+  };
+  var f=window.fetch;
+  if(f){window.fetch=function(i,o){if(typeof i==='string'&&MAP[i])i=MAP[i];return f.call(this,i,o);};}
+  function fix(){[].forEach.call(document.querySelectorAll('[data-mp4video],video[src],source[src]'),function(el){['data-mp4video','src'].forEach(function(a){var v=el.getAttribute(a);if(v&&MAP[v])el.setAttribute(a,MAP[v]);});});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fix);else fix();
+  /* ролики кейса во всплывающем окне: грузим только начало, целиком — когда нажали «смотреть» */
+  if('MutationObserver' in window){new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++){var n=a[j];if(n.nodeType!==1||!n.closest||!n.closest('#nm-videos'))continue;var vs=n.tagName==='VIDEO'?[n]:n.querySelectorAll('video');for(var k=0;k<vs.length;k++){vs[k].preload='metadata';}}}}).observe(document.documentElement,{childList:true,subtree:true});}
+})();
+</script>
+<!-- /NM-MEDIA-GITHUB -->
+
+<!-- NM-CASE-BG: на страницах кейсов фон без зелёного свечения в углах (графит и зерно остаются) -->
+<style id="nm-case-bg">
+body::before{background-image:linear-gradient(180deg,#121410 0%,#0c0d0b 50%,#0e100c 100%)!important}
+</style>
