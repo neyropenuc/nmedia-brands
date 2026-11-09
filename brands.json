@@ -3,12 +3,12 @@
     "id": "logika-moloka",
     "title": "ЛОГИКА МОЛОКА",
     "description": "Большой проект для бренда «Логика молока» о любительском спорте: хоккей, футбол, команды и болельщики. Больше 10 спортсменов, их форма, медали и локации воссозданы один в один по материалам бренда. Быстрое движение в кадре, с которым нейросети справляются хуже всего, и максимальный фотореализм — без съёмочной смены.",
-    "preview": "https://neyropenuc.github.io/nmedia-brands/logika-moloka/cover.jpg",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/logika-moloka/cover.webp",
     "preview_vid": "https://neyropenuc.github.io/nmedia-brands/logika-moloka/bg.mp4",
     "images": [
-      "https://neyropenuc.github.io/nmedia-brands/logika-moloka/photo1.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/logika-moloka/photo2.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/logika-moloka/photo3.jpg"
+      "https://neyropenuc.github.io/nmedia-brands/logika-moloka/photo1.webp",
+      "https://neyropenuc.github.io/nmedia-brands/logika-moloka/photo2.webp",
+      "https://neyropenuc.github.io/nmedia-brands/logika-moloka/photo3.webp"
     ],
     "videos": [
       "https://neyropenuc.github.io/nmedia-brands/logika-moloka/video.mp4"
@@ -18,12 +18,12 @@
     "id": "arendapro",
     "title": "АРЕНДА.PRO",
     "description": "Ролик для сервиса Аренда.PRO: история арендодателя Геннадия — двенадцать показов и ноль жильцов — и решение, которое предлагает сервис. Сцены и пролёты камеры сначала собрали в 3D, офис и команду воссоздали по фотографиям клиента, а затем наложили нейросеть. Так камера идёт ровно так, как задумано, а герои не меняются от кадра к кадру.",
-    "preview": "https://neyropenuc.github.io/nmedia-brands/arendapro/cover.jpg",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/arendapro/cover.webp",
     "preview_vid": "https://neyropenuc.github.io/nmedia-brands/arendapro/bg.mp4",
     "images": [
-      "https://neyropenuc.github.io/nmedia-brands/arendapro/photo1.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/arendapro/photo2.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/arendapro/photo3.jpg"
+      "https://neyropenuc.github.io/nmedia-brands/arendapro/photo1.webp",
+      "https://neyropenuc.github.io/nmedia-brands/arendapro/photo2.webp",
+      "https://neyropenuc.github.io/nmedia-brands/arendapro/photo3.webp"
     ],
     "videos": [
       "https://neyropenuc.github.io/nmedia-brands/arendapro/video.mp4"
@@ -33,12 +33,12 @@
     "id": "sim-kontrol",
     "title": "СИМ-КОНТРОЛЬ",
     "description": "Рекламный ролик для СИМ-КОНТРОЛЬ — проекта Национальной телематической платформы о безопасности на электросамокатах. Городские сцены, водители, пешеходы и райдеры, активация самоката по Face ID и передача данных в реальном времени. Весь ролик создан с помощью нейросетей, без съёмок.",
-    "preview": "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/cover.jpg",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/cover.webp",
     "preview_vid": "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/bg.mp4",
     "images": [
-      "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/photo1.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/photo2.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/photo3.jpg"
+      "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/photo1.webp",
+      "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/photo2.webp",
+      "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/photo3.webp"
     ],
     "videos": [
       "https://neyropenuc.github.io/nmedia-brands/sim-kontrol/video.mp4"
@@ -48,12 +48,12 @@
     "id": "yandex",
     "title": "МОЯ ВОЛНА",
     "description": "Рекламный ролик в формате документального интервью: история серфера от детской мечты до финала чемпионата. Волны, тренировки, победа и признание — всё снято без съёмок и выездов, целиком с помощью нейросетей. Герой узнаваем в каждом кадре — от детских воспоминаний до пьедестала.",
-    "preview": "https://neyropenuc.github.io/nmedia-brands/yandex/cover.jpg",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/yandex/cover.webp",
     "preview_vid": "https://neyropenuc.github.io/nmedia-brands/yandex/bg.mp4",
     "images": [
-      "https://neyropenuc.github.io/nmedia-brands/yandex/photo1.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/yandex/photo2.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/yandex/photo3.jpg"
+      "https://neyropenuc.github.io/nmedia-brands/yandex/photo1.webp",
+      "https://neyropenuc.github.io/nmedia-brands/yandex/photo2.webp",
+      "https://neyropenuc.github.io/nmedia-brands/yandex/photo3.webp"
     ],
     "videos": [
       "https://neyropenuc.github.io/nmedia-brands/yandex/video.mp4"
@@ -78,12 +78,12 @@
     "id": "niva",
     "title": "NIVA TRAVEL",
     "description": "Имиджевый ролик NIVA TRAVEL: внедорожник в пустыне, дюны, песчаные вихри и макро-кадры её обитателей. Динамика, свет заката и фактура песка — вся картинка создана с помощью нейросетей, без выезда на съёмку.",
-    "preview": "https://neyropenuc.github.io/nmedia-brands/niva/cover.jpg",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/niva/cover.webp",
     "preview_vid": "https://neyropenuc.github.io/nmedia-brands/niva/bg.mp4",
     "images": [
-      "https://neyropenuc.github.io/nmedia-brands/niva/photo1.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/niva/photo2.jpg",
-      "https://neyropenuc.github.io/nmedia-brands/niva/photo3.jpg"
+      "https://neyropenuc.github.io/nmedia-brands/niva/photo1.webp",
+      "https://neyropenuc.github.io/nmedia-brands/niva/photo2.webp",
+      "https://neyropenuc.github.io/nmedia-brands/niva/photo3.webp"
     ],
     "videos": [
       "https://neyropenuc.github.io/nmedia-brands/niva/video.mp4"
@@ -93,10 +93,10 @@
     "id": "chetko",
     "title": "ЧЕТКО РЕМОНТ",
     "description": "Рекламный ролик для компании по ремонту квартир с упором на запоминающийся креатив и контраст «до / после». Задача была сделать нестандартную рекламу, которая сразу привлекает внимание и легко запоминается. В ролике показали трансформацию старой квартиры в полностью обновлённый интерьер и подчеркнули идею бренда — ремонт, который делается «чётко».",
-    "preview": "https://neyropenuc.github.io/nmedia-brands/chetko/cover.jpg",
+    "preview": "https://neyropenuc.github.io/nmedia-brands/chetko/cover.webp",
     "preview_vid": "https://neyropenuc.github.io/nmedia-brands/chetko/bg.webm",
     "images": [
-      "https://neyropenuc.github.io/nmedia-brands/chetko/photo1.jpg",
+      "https://neyropenuc.github.io/nmedia-brands/chetko/photo1.webp",
       "https://neyropenuc.github.io/nmedia-brands/chetko/photo2.webp",
       "https://neyropenuc.github.io/nmedia-brands/chetko/photo3.webp"
     ],
