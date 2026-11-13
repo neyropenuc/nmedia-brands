@@ -19,6 +19,8 @@ def montage(name, segs, fps):
     """segs: [(file, start, end)] -> concatenated loop."""
     args, chains = [], []
     for i, (f, a, b) in enumerate(segs):
+        if len(segs) > 1:
+            a, b = a + 0.05, b - 0.12   # запас от склеек исходника, чтобы не проскакивали чужие кадры
         args += ["-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", f]
         chains.append(
             f"[{i}:v]fps={fps},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,"
@@ -69,7 +71,7 @@ if "motion" in which:
         (MC, 12.36, 13.90),        # ВАУ!
         (MD, 9.60, 11.40),         # 3D-ноль трескается
         (M9, 12.40, 14.00),        # 3D-фигуры
-        (MD, 18.40, 20.10),        # сова и уведомления
+        (MD, 18.55, 20.10),        # сова и уведомления
         (MC, 21.30, 22.80),        # логотип размножается
     ], 30)
 
