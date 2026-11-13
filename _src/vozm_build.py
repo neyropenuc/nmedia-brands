@@ -65,7 +65,7 @@ which = sys.argv[1:] or ["integration", "motion", "blocking", "realism", "creati
 if "integration" in which:
     montage("integration", [
         (f"{U}/и материалов один из кадров.mp4", -0.05, 3.16),   # самолёт МС-21, целиком
-        (BRUSH, 0.40, 4.54),       # щётка выплывает из темноты, поворачивается и раскрывается изнутри
+        (BRUSH, 0.40, 4.33),       # щётка выплывает из темноты и раскрывается; обрез до подписи (она с 4.25)
     ], 24)
 
 if "motion" in which:
