@@ -18,12 +18,13 @@ def run(cmd):
 def montage(name, segs, fps):
     """segs: [(file, start, end)] -> concatenated loop."""
     args, chains = [], []
-    for i, (f, a, b) in enumerate(segs):
+    for i, (f, a, b, *pre) in enumerate(segs):
+        pre = (pre[0] + ",") if pre else ""   # своё кадрирование для куска (например, убрать вшитые субтитры)
         if len(segs) > 1:
             a, b = a + 0.05, b - 0.12   # запас от склеек исходника, чтобы не проскакивали чужие кадры
         args += ["-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", f]
         chains.append(
-            f"[{i}:v]fps={fps},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,"
+            f"[{i}:v]{pre}fps={fps},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,"
             f"crop={W}:{H},setsar=1,format=yuv420p[v{i}]")
     concat = "".join(f"[v{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=0[out]"
     fc = ";".join(chains + [concat])
@@ -60,8 +61,7 @@ which = sys.argv[1:] or ["integration", "motion", "blocking", "realism", "creati
 if "integration" in which:
     montage("integration", [
         (f"{U}/и материалов один из кадров.mp4", -0.05, 3.16),   # самолёт МС-21, целиком
-        (BRUSH, 1.35, 4.47),       # щётка поворачивается и раскрывается изнутри
-        (BRUSH, 20.55, 23.62),     # коробка NANOVIRE выезжает в луче света
+        (BRUSH, 0.40, 4.54),       # щётка выплывает из темноты, поворачивается и раскрывается изнутри
     ], 24)
 
 if "motion" in which:
@@ -83,14 +83,17 @@ if "blocking" in which:
 if "realism" in which:
     montage("realism", [
         (LOG, 2.15, 3.95),         # хоккеисты в свете
-        (f"{U}/яндекс.mp4", 57.72, 59.20),          # сёрфер в трубе волны (без субтитров)
+        (f"{U}/яндекс.mp4", 19.10, 21.70, "crop=1440:810:0:40"),  # сёрфер крупно на интервью, улыбается (кадр сверху — без субтитров)
         (LOG, 6.10, 7.95),         # игрок №20
         (f"{U}/wazzup_render_5.mp4", 20.95, 26.67), # девочка говорит два слова, зум, глаза
     ], 24)
 
 if "creative" in which:
     # один цельный кадр из «СИМ-КОНТРОЛЬ»: замедление, камера едет вверх, разлитый стакан
-    montage("creative", [(f"{U}/самокаты сим контроль.mp4", 25.80, 29.71)], 24)
+    montage("creative", [
+        (f"{U}/самокаты сим контроль.mp4", 26.40, 29.82),   # камера уже на уровне коляски, едет вверх, летит стакан
+        (f"{U}/самокаты сим контроль.mp4", 31.75, 33.55),   # слоу-мо: колесо самоката и бегущий корги
+    ], 24)
 
 if "lipsync" in which:
     montage("lipsync", [(f"{U}/липсинк.mp4", 0.0, 4.01)], 24)
