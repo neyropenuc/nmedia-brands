@@ -53,16 +53,15 @@ LOG = f"{U}/логика молока.mp4"
 REEL = f"{U}/шоурил.mp4"
 AR = f"{U}/arendapro_render_6.mp4"
 M9, MC, MD = f"{E}/motion_9-priemov.mp4", f"{E}/motion_claude.mp4", f"{E}/motion_duolingo.mp4"
+BRUSH = f"{U}/ЗУБ ЩЕТКИ.mp4"
 
 which = sys.argv[1:] or ["integration", "motion", "blocking", "realism", "creative", "lipsync"]
 
 if "integration" in which:
     montage("integration", [
-        (f"{U}/и материалов один из кадров.mp4", 0.0, 3.0),
-        (REEL, 12.55, 14.65),      # часы на руке
-        (REEL, 11.15, 12.42),      # машина
-        (LOG, 0.0, 1.13),          # шайба с логотипом
-        (AR, 52.15, 53.55),        # логотип на стене офиса
+        (f"{U}/и материалов один из кадров.mp4", -0.05, 3.16),   # самолёт МС-21, целиком
+        (BRUSH, 1.35, 4.47),       # щётка поворачивается и раскрывается изнутри
+        (BRUSH, 20.55, 23.62),     # коробка NANOVIRE выезжает в луче света
     ], 24)
 
 if "motion" in which:
@@ -91,16 +90,8 @@ if "realism" in which:
     ], 24)
 
 if "creative" in which:
-    montage("creative", [
-        (REEL, 4.02, 5.10),        # сноуборд на вулкане
-        (REEL, 6.27, 7.56),        # змея на свитере
-        (REEL, 7.60, 8.86),        # астронавт
-        (REEL, 14.73, 15.98),      # белый медведь
-        (REEL, 17.14, 18.23),      # духи в пузыре
-        (REEL, 25.40, 26.44),      # самолёт над людьми
-        (REEL, 26.48, 27.56),      # кит
-        (REEL, 27.60, 28.90),      # динозавр
-    ], 24)
+    # один цельный кадр из «СИМ-КОНТРОЛЬ»: замедление, камера едет вверх, разлитый стакан
+    montage("creative", [(f"{U}/самокаты сим контроль.mp4", 25.80, 29.71)], 24)
 
 if "lipsync" in which:
     montage("lipsync", [(f"{U}/липсинк.mp4", 0.0, 4.01)], 24)
