@@ -15,7 +15,7 @@ def run(cmd):
     if r.returncode:
         print(r.stderr[-3000:]); sys.exit(1)
 
-def montage(name, segs, fps):
+def montage(name, segs, fps, fade=None):
     """segs: [(file, start, end)] -> concatenated loop."""
     args, chains = [], []
     for i, (f, a, b, *pre) in enumerate(segs):
@@ -27,6 +27,10 @@ def montage(name, segs, fps):
             f"[{i}:v]{pre}fps={fps},scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,"
             f"crop={W}:{H},setsar=1,format=yuv420p[v{i}]")
     concat = "".join(f"[v{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=0[out]"
+    if fade:
+        total = sum((b - 0.12) - (a + 0.05) if len(segs) > 1 else b - a for f, a, b, *_ in segs)
+        fi, fo = fade
+        concat = concat.replace("[out]", "[c]") + f";[c]fade=t=in:st=0:d={fi},fade=t=out:st={total - fo:.3f}:d={fo}[out]"
     fc = ";".join(chains + [concat])
     run(["ffmpeg", "-v", "error", "-y", *args, "-filter_complex", fc, "-map", "[out]", "-an",
          "-c:v", "libx264", "-preset", "slow", "-crf", CRF, "-profile:v", "high", "-pix_fmt", "yuv420p",
@@ -84,16 +88,19 @@ if "realism" in which:
     montage("realism", [
         (LOG, 2.15, 3.95),         # хоккеисты в свете
         (f"{U}/яндекс.mp4", 19.10, 21.70, "crop=1440:810:0:40"),  # сёрфер крупно на интервью, улыбается (кадр сверху — без субтитров)
-        (LOG, 6.10, 7.95),         # игрок №20
         (f"{U}/wazzup_render_5.mp4", 20.95, 26.67), # девочка говорит два слова, зум, глаза
     ], 24)
 
 if "creative" in which:
-    # один цельный кадр из «СИМ-КОНТРОЛЬ»: замедление, камера едет вверх, разлитый стакан
+    # мини-история из «СИМ-КОНТРОЛЬ»: камера поднимается от коляски, летит стакан, реакция;
+    # корги, парень с телефоном, слоу-мо самоката мимо корги (до появления титра); мягкий вход и выход
+    SC = f"{U}/самокаты сим контроль.mp4"
     montage("creative", [
-        (f"{U}/самокаты сим контроль.mp4", 26.40, 29.82),   # камера уже на уровне коляски, едет вверх, летит стакан
-        (f"{U}/самокаты сим контроль.mp4", 31.75, 33.55),   # слоу-мо: колесо самоката и бегущий корги
-    ], 24)
+        (SC, 26.40, 28.85),   # камера от коляски вверх, стакан пролетает, короткая реакция
+        (SC, 29.80, 30.90),   # корги крупно (кадр целиком)
+        (SC, 30.80, 31.90),   # парень с телефоном (кадр целиком)
+        (SC, 31.80, 33.95),   # слоу-мо: самокат проезжает мимо корги, камера отъезжает (до титра)
+    ], 24, fade=(0.25, 0.40))
 
 if "lipsync" in which:
     montage("lipsync", [(f"{U}/липсинк.mp4", 0.0, 4.01)], 24)
